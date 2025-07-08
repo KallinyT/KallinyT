@@ -20,7 +20,7 @@ O app oferece:
 ## 🛠️ Funcionalidades Implementadas
 
 - Consumo de dados via **API pública** utilizando **Retrofit**.
-- **Armazenamento local** funcional no dispositivo.
+- **Armazenamento local comRoom** funcional no dispositivo.
 - Exibição de imagens com **Glide**.
 - Interface construída com **ConstraintLayout**.
 - Arquitetura baseada em **MVVM**, garantindo uma navegação fluida e uma experiência de usuário intuitiva.
