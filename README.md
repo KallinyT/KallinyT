@@ -33,16 +33,14 @@ O app oferece:
 ![Image](https://github.com/user-attachments/assets/1068d077-7815-4047-8f64-5fc5f5932be7)
 
 ### Tela com Filtro de Busca:
-![Busca](./fb3f9d46-4dd9-4397-96db-61a3b8931dbd.jpeg)
+![Image](https://github.com/user-attachments/assets/4f9acb6d-c3d5-4bf2-a712-0a6a27f4f89f)
 
 ### Tela de Detalhe da Notícia:
-![Detalhes](./26bb88c2-e72a-4235-a34d-c7c657e42ab6.jpeg)
+![Image](https://github.com/user-attachments/assets/2e9ce6ee-01eb-464b-9254-9d63fb41aeaf)
 
 ---
 
 ## ⚙️ Decisões Técnicas
-
-Parte diego
----
+parte diego 
 
 > Projeto desenvolvido com foco em praticidade, fluidez e boa experiência para os estudantes da Unifucamp.
