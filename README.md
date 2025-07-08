@@ -30,7 +30,7 @@ O app oferece:
 ## 📱 Capturas de Telas
 
 ### Tela principal (Feed de Notícias):
-![Feed](./379b7642-66e6-4ff0-bc95-ccab29e37e3a.jpeg)
+![Image](https://github.com/user-attachments/assets/1068d077-7815-4047-8f64-5fc5f5932be7)
 
 ### Tela com Filtro de Busca:
 ![Busca](./fb3f9d46-4dd9-4397-96db-61a3b8931dbd.jpeg)
