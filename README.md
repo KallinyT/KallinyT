@@ -26,6 +26,13 @@ O app oferece:
 - Arquitetura baseada em **MVVM**, garantindo uma navegação fluida e uma experiência de usuário intuitiva.
 
 ---
+## 📍 Diagrama UML
+
+### Diagrama de caso de uso
+Decidimos construir um diagrama de caso de uso para fornecer aos stakeholders uma visão de quais funcionalidade o usuario tem sobre o nosso aplicativo. Como visualizar notícias, buscar conteúdos específicos e acessar os detalhes das matérias.
+<img width="785" height="904" alt="Image" src="https://github.com/user-attachments/assets/0b657c4f-76ee-4eb0-9f38-58ccd6e65732" />
+
+---
 
 ## 📱 Capturas de Telas
 
