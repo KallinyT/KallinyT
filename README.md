@@ -49,6 +49,118 @@ Decidimos construir um diagrama de caso de uso para fornecer aos stakeholders um
 ---
 
 ## ⚙️ Decisões Técnicas
-parte diego 
 
-> Projeto desenvolvido com foco em praticidade, fluidez e boa experiência para os estudantes da Unifucamp.
+O **UniJornal** foi desenvolvido com foco em **praticidade, fluidez** e **boa experiência do usuário**, especialmente para os estudantes da **Unifucamp**. A seguir, destacamos as principais decisões técnicas e tecnologias utilizadas no projeto:
+
+### 🧪 Tecnologias Utilizadas
+
+-   **Kotlin**: Linguagem moderna e concisa, utilizada para todo o desenvolvimento nativo Android do aplicativo.
+    
+-   **Android Studio**: Ambiente de desenvolvimento oficial para Android, utilizado para codificação, testes e emulação do app.
+    
+-   **Glide**: Biblioteca utilizada para carregamento e cache eficiente de imagens, garantindo uma boa performance no feed de notícias.
+    
+-   **Room (DAO)**: Implementação de banco de dados local com persistência usando **DAO (Data Access Object)**, permitindo acesso offline às notícias consultadas anteriormente.
+    
+-   **Retrofit**: Biblioteca de cliente HTTP usada para realizar o consumo da API pública de notícias, com suporte à conversão automática de dados JSON.
+    
+-   **MVVM (Model-View-ViewModel)**: Arquitetura adotada para garantir separação de responsabilidades, facilitando a manutenção do código e promovendo escalabilidade do projeto.
+    
+
+### 📐 Boas Práticas Adotadas
+
+-   Organização em **camadas (Model, View e ViewModel)** para facilitar testes, manutenções e expansões futuras.
+    
+-   Uso de **LiveData** para comunicação reativa entre ViewModel e a interface do usuário.
+    
+-   Utilização de **ConstraintLayout** para garantir uma interface adaptável a diferentes tamanhos de tela.
+    
+-   Implementação de **tratamento de erros** e **validação de estados de rede** para garantir estabilidade e boa experiência mesmo em condições adversas.
+    
+## 🗂️ Estrutura de Arquivos do Projeto
+
+O projeto está estruturado de forma modular, seguindo os princípios da arquitetura **MVVM (Model-View-ViewModel)** e promovendo a separação clara de responsabilidades. Abaixo, apresentamos uma descrição detalhada de cada diretório e seus arquivos:
+
+```
+uninoticia/
+├── local/
+│   ├── dao/
+│   │   └── PostDao.kt               ← Interface com métodos de acesso ao banco de dados local (Room)
+│   └── database/
+│       └── AppDatabase.kt          ← Classe que configura e instancia o banco de dados local
+│
+├── model/
+│   └── Post.kt                     ← Data class que representa o modelo de uma notícia (Post)
+│
+├── network/
+│   ├── ApiService.kt              ← Interface com os endpoints da API REST
+│   └── RetrofitClient.kt          ← Objeto singleton que configura e fornece o Retrofit
+│
+├── repository/
+│   └── PostRepository.kt          ← Camada que une dados da API e banco local, usada pelos ViewModels
+│
+├── viewmodel/
+│   ├── PostViewModel.kt           ← ViewModel principal para gerenciar a lista de notícias (feed)
+│   ├── PostViewModelFactory.kt    ← Factory para instanciar o PostViewModel com dependências
+│   ├── PostDetailViewModel.kt     ← ViewModel para gerenciar os dados da tela de detalhe
+│   └── PostDetailViewModelFactory.kt ← Factory para PostDetailViewModel
+│
+├── MainActivity.kt                ← Tela principal que exibe o feed de notícias
+├── PostAdapter.kt                 ← Adaptador do RecyclerView que exibe os itens de notícia no feed
+└── PostDetailActivity.kt         ← Tela de detalhes da notícia selecionada
+
+```
+
+----------
+
+### 🔍 Explicação por Pacote
+
+#### 📁 `local/`
+
+-   **PostDao.kt**: Define operações como `insert`, `getAllPosts` e `getPostById` usando a biblioteca **Room**.
+    
+-   **AppDatabase.kt**: Responsável por criar e acessar a instância do banco de dados local do app.
+    
+
+#### 📁 `model/`
+
+-   **Post.kt**: Classe de modelo que representa as informações de uma notícia. Utilizada em toda a aplicação, inclusive na API, banco de dados e UI.
+    
+
+#### 📁 `network/`
+
+-   **ApiService.kt**: Define os endpoints da API, como `getPosts()`.
+    
+-   **RetrofitClient.kt**: Configura e fornece a instância de **Retrofit** usada para fazer chamadas HTTP à API.
+    
+
+#### 📁 `repository/`
+
+-   **PostRepository.kt**: Camada intermediária entre as fontes de dados (API e banco) e a ViewModel. Implementa lógica como atualização de cache e fallback offline.
+    
+
+#### 📁 `viewmodel/`
+
+-   **PostViewModel.kt**: Gerencia os dados exibidos no feed principal, buscando do repositório e expondo via `LiveData`.
+    
+-   **PostViewModelFactory.kt**: Permite a injeção do repositório na ViewModel de forma segura e modular.
+    
+-   **PostDetailViewModel.kt**: Responsável por carregar os detalhes de uma notícia específica.
+    
+-   **PostDetailViewModelFactory.kt**: Equivalente ao anterior, mas para a tela de detalhe.
+    
+
+#### 📄 `MainActivity.kt`
+
+Tela inicial do app. Observa o `PostViewModel`, carrega o feed de notícias e aplica a lógica de navegação e busca.
+
+#### 📄 `PostAdapter.kt`
+
+Adaptador usado pelo `RecyclerView` para exibir os posts dinamicamente no feed, com imagens (carregadas via **Glide**).
+
+#### 📄 `PostDetailActivity.kt`
+
+Apresenta os dados completos de uma notícia (título, conteúdo, imagem, data e autor), com base na seleção feita na tela principal.
+ 
+
+> rProjeto desenvolvido com foco em praticidade, fluidez e boa experiência para os estudantes da Unifucamp.
