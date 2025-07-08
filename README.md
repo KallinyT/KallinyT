@@ -20,7 +20,8 @@ O app oferece:
 ## 🛠️ Funcionalidades Implementadas
 
 - Consumo de dados via **API pública** utilizando **Retrofit**.
-- **Armazenamento local implementado com Room**, permitindo persistência de dados offline por meio de um banco de dados nativo do dispositivo.
+- Persistir dados da API da Fipe no banco local do Android usando **Room**, permitindo
+**consultas e reutilização offline**
 - Exibição de imagens com **Glide**.
 - Interface construída com **ConstraintLayout**.
 - Arquitetura baseada em **MVVM**, garantindo uma navegação fluida e uma experiência de usuário intuitiva.
